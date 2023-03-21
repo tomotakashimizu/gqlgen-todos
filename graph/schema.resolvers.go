@@ -32,7 +32,7 @@ func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 
 // User is the resolver for the user field.
 func (r *todoResolver) User(ctx context.Context, obj *model.Todo) (*model.User, error) {
-	panic(fmt.Errorf("not implemented: User - user"))
+	return &model.User{ID: obj.User.ID, Name: obj.User.Name}, nil
 }
 
 // Mutation returns MutationResolver implementation.
